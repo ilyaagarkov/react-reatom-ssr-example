@@ -1,24 +1,26 @@
-import loadable from "@loadable/component";
+import loadable from '@loadable/component';
 
-
-const UsersPage = loadable(() => import('./pages/users/usersPage'));
-const PostPage = loadable(() => import('./pages/posts/postsPage'));
-
+const UsersPage = loadable(() =>
+  import(/* webpackChunkName: "UsersPage" */ './pages/users/usersPage'),
+);
+const PostPage = loadable(() =>
+  import(/* webpackChunkName: "PostPage" */ './pages/posts/postsPage'),
+);
 
 export const routes = [
   {
     path: '/',
     exact: true,
-    component: UsersPage
+    component: UsersPage,
   },
   {
     path: '/users',
     exact: true,
-    component: UsersPage
+    component: UsersPage,
   },
   {
     path: '/posts',
     exact: true,
-    component: PostPage
+    component: PostPage,
   },
 ];

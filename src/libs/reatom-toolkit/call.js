@@ -1,14 +1,5 @@
-/**
- * Adds the possibility of dispatching and waiting the _actionFetch_
- * @param store
- * @param action
- * @example
- * const result = await call(store, actionFetch())
- */
-export function call(
-  store,
-  action,
-) {
+// return a promise from store.dispatch
+export function call(store, action) {
   let res;
   let rej;
 
@@ -18,16 +9,16 @@ export function call(
       async (...a) => {
         try {
           const payload = await action.reactions[0](...a);
-          res(payload)
+          res(payload);
         } catch (error) {
-          rej(error)
+          rej(error);
         }
-      }
+      },
     ],
   });
 
   return new Promise((_res, _rej) => {
     res = _res;
     rej = _rej;
-  })
+  });
 }

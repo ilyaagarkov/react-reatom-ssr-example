@@ -1,13 +1,17 @@
 import React from 'react';
-import {usePosts, loadPostsActions, postsPageAtom} from "./postsPage.model"
-import {BasePageTemplate} from "../../ui/templates/basePageTemlate";
+
+import { BasePageTemplate } from 'ui/templates/basePageTemlate';
+
+import { usePosts, loadPostsActions, postsPageAtom } from './postsPage.model';
 
 export default function PostsPage() {
-  const {postsList} = usePosts();
+  const { postsList } = usePosts();
 
   return (
     <BasePageTemplate>
-      {postsList.map(post => <div key={post.id}>{post.title}</div>)}
+      {postsList.map(post => (
+        <div key={post.id}>{post.title}</div>
+      ))}
     </BasePageTemplate>
   );
 }
