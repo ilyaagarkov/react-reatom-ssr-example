@@ -14,7 +14,7 @@
     "@reatom/babel-plugin": "^1.0.0",
     "@reatom/core": "^1.0.0",
     "@reatom/react": "^1.0.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "razzle": "^3.0.0",
     "react": "^16.12.0",
